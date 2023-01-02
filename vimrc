@@ -12,8 +12,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'ycm-core/YouCompleteMe'
 
+Plugin 'preservim/nerdtree'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+set number
 
 set tabstop=4
 set shiftwidth=4
@@ -59,3 +63,11 @@ nnoremap <C-P> :bprev<CR>
 set visualbell t_vb=
 
 set guifont=Monaco:h18
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+autocmd VimEnter * NERDTree | wincmd p
